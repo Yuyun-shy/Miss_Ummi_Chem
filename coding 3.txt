@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>To Miss Ummi</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #ffd6e7, #fff0f5);
+      color: #4a0033;
+      padding: 20px;
+      margin: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 102, 178, 0.3);
+    }
+    h1 {
+      color: #cc007a;
+      text-align: center;
+    }
+    p {
+      line-height: 1.8;
+    }
+    .slide {
+      display: none;
+      text-align: center;
+      margin: 30px 0;
+      animation: fade 0.8s ease-in-out;
+    }
+    .slide.active {
+      display: block;
+    }
+    .slide-box {
+      width: 100%;
+      height: 280px;
+      border-radius: 15px;
+      background: linear-gradient(135deg, #ffe0ef, #ffd6e7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      font-size: 22px;
+      font-weight: bold;
+      color: #d63384;
+      box-shadow: 0 0 15px rgba(255, 102, 178, 0.3);
+      padding: 20px;
+    }
+    .slide-box span.emoji {
+      font-size: 50px;
+      margin-bottom: 15px;
+    }
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 25px;
+      background-color: #ff66b2;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #e0559d;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #999;
+    }
+    @keyframes fade {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>To Miss Ummi, with Love</h1>
+
+    <p>Assalamualaikum and greetings,</p>
+
+    <p>Today may be just another ordinary date on the calendar, but for me, it marks the end of a chapter that has shaped a meaningful part of my life as a student at <strong>Kolej Matrikulasi Labuan</strong>.</p>
+
+    <p>Your class wasn’t just about atoms, ions, or chemical bonds. It was a space where I discovered patience, sincerity, and the dedication of a teacher who never gave up on her students.</p>
+
+    <p>Miss Ummi, you might not even realise it, but every smile, every gentle reminder, and every note you wrote on the whiteboard has left an impact on my heart that words can’t fully express.</p>
+
+    <p>I may not remember every chemical formula in the future, but I will always remember how your voice comforted us before exams, how you believed in our potential, and how your calm presence brought light into even the most stressful days.</p>
+
+    <p>As I prepare for my final exam, <strong>PSPM 2</strong>, I promise to give it my very best. Not just for myself, but as a way to honour the knowledge, time, and heart you have given to us.</p>
+
+    <p>Even as we part ways, your lessons will remain — not only in our notes but in the values we carry. You were not just a Chemistry lecturer — you were the catalyst that sparked courage, growth, and hope in me.</p>
+
+    <p>From the bottom of my heart, thank you for being our teacher, our guide, and our light during this journey.</p>
+
+    <p>With heartfelt love and respect,<br>
+    <em>Nur Hasnidar Rahman</em><br>
+    <em>F21</em></p>
+
+    <!-- Slideshow Pink Comel -->
+    <div class="slide active" id="slide1">
+      <div class="slide-box">
+        <span class="emoji">📸</span>
+        Gambar Kenangan Dalam Ingatan
+      </div>
+    </div>
+    <div class="slide" id="slide2">
+      <div class="slide-box">
+        <span class="emoji">🎥</span>
+        Video Perjalanan Yang Indah
+      </div>
+    </div>
+    <div class="slide" id="slide3">
+      <div class="slide-box">
+        <span class="emoji">🎶</span>
+        Lagu Perpisahan Di Hati Kami
+      </div>
+    </div>
+
+    <button onclick="nextSlide()">Next Slide</button>
+
+    <div class="footer">
+
+Created with love by <strong>Nida</strong>, <strong>F21</strong>
+    </div>
+  </div>
+
+  <!-- Confetti Script -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    let current = 1;
+    const total = 3;
+
+    function nextSlide() {
+      // Confetti
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+
+      // Tukar slide
+      document.getElementById(`slide${current}`).classList.remove('active');
+      current = current % total + 1;
+      document.getElementById(`slide${current}`).classList.add('active');
+    }
+  </script>
+</body>
+</html>
